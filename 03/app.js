@@ -81,25 +81,31 @@ create(todos, '잠')
 console.log(todos)
 
 function read(arr) {
-    arr.forEach((array) => {
-        console.log(array)
+    arr.forEach((params) => {
+        console.log(params)
     })
 }
 read(todos)
 
 function updateTodos(arr, exist, change){
-    arr.map((array) => {
-        if(array === exist){
+    const updateArr = arr.map((params) => {
+        if(params === exist){
             return change
         }
-        return array
+        return params
     })
+    return updateArr
 }
-updateTodos(todos, '운동', '개발')
-console.log(todos)
+
+const upTodo = updateTodos(todos, '운동', '개발')
+console.log(upTodo)
 
 function deleteTodos(arr, del){
-    arr.filter((array)=>{
-        return array !== del
+    const delArr = arr.filter((params)=>{
+        return params !== del
     })
+    return delArr
 }
+
+const delTodo = deleteTodos(todos, '공부')
+console.log(delTodo)
