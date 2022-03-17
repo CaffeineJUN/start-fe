@@ -7,17 +7,31 @@
 // }
 
 // 객체는 참조 타입
-var a = {x:1}
-var b = a
-b.x= 2/* 둘다 x:2로 변경 */
+// var a = {x:1}
+// var b = a
+// b.x= 2/* 둘다 x:2로 변경 */
 
-console.log(a,b)
+// console.log(a,b)
+
+// alert('alert');
+
+// var who = prompt('당신은 누구세요?');
+
+// var isDelete = confirm('정말 삭제합니까?');
+// console.log(isDelete)
+
+// var enc = encodeURIComponent('카카오');
+// decodeURIComponent(enc);
+
+
+
+// 퀴즈
 
 // var count = [10,20,30,40,50,60,70,100]; 배열 count 요소들의 평균값 구하는 코드를 작성하세요 *
-var count = [10,20,30,40,50,60,70,100]
-var result = 0
-count.forEach((e) => result += e)
-console.log(`result :${result/count.length}`)    
+// var count = [10,20,30,40,50,60,70,100]
+// var result = 0
+// count.forEach((e) => result += e)
+// console.log(`result :${result/count.length}`)    
 
 // 구구단을 출력하는 코드를 for구문을 사용하여 작성하세요 
     // for (let i = 1; i < 10; i++) {
@@ -39,16 +53,16 @@ console.log(`result :${result/count.length}`)
 // multiplication()
 
 // 메소드가 포함된 객체를 생성하세요 *
-var person = {
-    name: 'jun',
-    age: '27',
-    gender: function(e){
-        console.log(e)
-        return (e === 1 ? console.log('male') : console.log('female'))
-    }
-}
+// var person = {
+//     name: 'jun',
+//     age: '27',
+//     gender: function(e){
+//         console.log(e)
+//         return (e === 1 ? console.log('male') : console.log('female'))
+//     }
+// }
 
-person.gender(2)
+// person.gender(2)
 
 
 //  window.prompt() 를 사용하여 사용자에게 숫자값을 입력받고 받은 숫자값들의 합을 출력하는 코드를 작성하세요.
@@ -58,6 +72,34 @@ person.gender(2)
 // console.log(num1 + num2)
 
 
+var todos = ['운동', '공부']
 
+function create(arr, params) {
+    arr.push(params)
+}
+create(todos, '잠')
+console.log(todos)
 
+function read(arr) {
+    arr.forEach((array) => {
+        console.log(array)
+    })
+}
+read(todos)
 
+function updateTodos(arr, exist, change){
+    arr.map((array) => {
+        if(array === exist){
+            return change
+        }
+        return array
+    })
+}
+updateTodos(todos, '운동', '개발')
+console.log(todos)
+
+function deleteTodos(arr, del){
+    arr.filter((array)=>{
+        return array !== del
+    })
+}
