@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>source</title>
+        <link rel="stylesheet" href="./quiz2.css" />
+    </head>
+    <body>
+        <div id="board">
+            <!-- 이 HTML을 자바스크립트로 추가하면 됩니다.
+        <span class="black"></span>1
+        <span class="white"></span>2
+        <span class="black"></span>3
+        <span class="white"></span>4
+        <span class="white"></span>5 
+        <span class="black"></span>6
+        <span class="white"></span>7
+        <span class="black"></span>8
+        <span class="black"></span>9
+        <span class="white"></span>0
+        <span class="black"></span>1
+        <span class="white"></span>2
+        <span class="white"></span>3
+        <span class="black"></span>4
+        <span class="white"></span>5
+        <span class="black"></span>6
+    //-->
+        </div>
+        <script>
+            var board = document.getElementById('board')
+            for (var i = 0; i < 4; i++) {
+                for (var j = 0; j < 4; j++) {
+                    const span = document.createElement('span')
+                    if (i % 2 === 0) {
+                        j % 2 === 0 ? span.classList.add('black') : span.classList.add('white')
+                    } else {
+                        j % 2 === 0 ? span.classList.add('white') : span.classList.add('black')
+                    }
+                    board.appendChild(span)
+                }
+            }
+            // const black = document.querySelectorAll('.black')
+            // black.forEach(e => (e.style.backgroundColor = 'black'))
+
+            board.addEventListener('click', e => {
+                const exist = document.querySelector('.clicked')
+                if (exist) {
+                    exist.classList.remove('clicked')
+                }
+                e.target.classList.add('clicked')
+            })
+        </script>
+    </body>
+</html>
