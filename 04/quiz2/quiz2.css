@@ -1,28 +1,23 @@
 #board {
-    /* width: 200px; */
     display: flex;
     width: 200px;
     flex-wrap: wrap;
 }
 
-span {
+#board span {
     display: block;
     width: 50px;
     height: 50px;
-
-    /* display: inline-block; */
-    /* width: 50px; */
-    /* height: 50px; */
 }
 
-.black {
+#board span.black {
     background-color: black;
 }
 
-.white {
+#board span.white {
     background-color: white;
 }
 
-.clicked {
+#board span.clicked {
     background-color: red;
 }
