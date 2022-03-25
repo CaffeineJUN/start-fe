@@ -16,5 +16,6 @@ board.addEventListener('click', e => {
     if (exist) {
         exist.classList.remove('clicked')
     }
+
     e.target.classList.add('clicked')
 })
