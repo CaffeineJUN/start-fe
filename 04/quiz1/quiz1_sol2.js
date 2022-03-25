@@ -49,44 +49,46 @@ var todayPhoto = [
     },
 ]
 
-let count = 1
-
 var wrap = document.getElementById('wrap')
-const div = document.createElement('div')
+const img_div = document.createElement('div')
+const btn_div = document.createElement('div')
 const left_btn = document.createElement('button')
 const span = document.createElement('span')
-const rigth_btn = document.createElement('button')
+const right_btn = document.createElement('button')
 
-wrap.appendChild(div)
-wrap.appendChild(left_btn)
-wrap.appendChild(span)
-wrap.appendChild(rigth_btn)
-
+let count = 1
 left_btn.innerHTML = '<'
-span.innerHTML = `${count} / ${todayPhoto.length - 2}`
-rigth_btn.innerHTML = '>'
+span.innerHTML = ` ${count} /  ${todayPhoto.length - 2}`
+right_btn.innerHTML = '>'
 
-function show_img() {
-    span.innerHTML = `${count} / ${todayPhoto.length - 2}`
+wrap.appendChild(img_div)
+wrap.appendChild(btn_div)
 
+btn_div.appendChild(left_btn)
+btn_div.appendChild(span)
+btn_div.appendChild(right_btn)
+
+function showImg(count) {
+    span.innerHTML = ` ${count} /  ${todayPhoto.length - 2}`
     count === 1 ? (left_btn.style.visibility = 'hidden') : (left_btn.style.visibility = 'visible')
-    count === todayPhoto.length - 2 ? (rigth_btn.style.visibility = 'hidden') : (rigth_btn.style.visibility = 'visible')
+    count === todayPhoto.length - 2 ? (right_btn.style.visibility = 'hidden') : (right_btn.style.visibility = 'visible')
 
-    div.innerHTML = ''
+    img_div.innerHTML = ''
+    const result = todayPhoto.filter((e, index) => index >= count - 1 && index <= count + 1)
 
-    for (var i = count - 1; i <= count + 1; i++) {
-        div.innerHTML += '<img src="' + todayPhoto[i].img + '"> '
-    }
+    result.forEach(e => {
+        img_div.innerHTML += `<img src="${e.img}"> `
+    })
 }
 
-show_img()
-
-rigth_btn.addEventListener('click', e => {
-    count++
-    show_img()
-})
+showImg(count)
 
 left_btn.addEventListener('click', e => {
     count--
-    show_img()
+    showImg(count)
+})
+
+right_btn.addEventListener('click', e => {
+    count++
+    showImg(count)
 })
