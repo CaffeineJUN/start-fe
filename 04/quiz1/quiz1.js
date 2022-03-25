@@ -49,13 +49,13 @@ var todayPhoto = [
     },
 ]
 
-let count = 1
-
 var wrap = document.getElementById('wrap')
 const div = document.createElement('div')
 const left_btn = document.createElement('button')
 const span = document.createElement('span')
 const rigth_btn = document.createElement('button')
+
+let count = 1
 
 wrap.appendChild(div)
 wrap.appendChild(left_btn)
@@ -81,12 +81,12 @@ function show_img() {
 
 show_img()
 
-rigth_btn.addEventListener('click', e => {
+rigth_btn.addEventListener('click', () => {
     count++
     show_img()
 })
 
-left_btn.addEventListener('click', e => {
+left_btn.addEventListener('click', () => {
     count--
     show_img()
 })
