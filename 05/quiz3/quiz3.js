@@ -58,7 +58,10 @@ function hiddenBtn() {
 // Q7
 function addImg() {
     const box = document.querySelectorAll('body > .box')
-    if (box.length === 0) addBox()
+    if (box.length === 0) {
+        addBox()
+        addImg()
+    }
 
     box.forEach(element => {
         const exist = element.querySelector('img')
