@@ -20,7 +20,6 @@ function dragAndDrop(e) {
 
     dragBox.addEventListener('mouseup', () => {
         document.removeEventListener('mousemove', boxMove)
-        dragBox.onmouseup = null
     })
 }
 
