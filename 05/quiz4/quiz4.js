@@ -1,33 +1,26 @@
 const box = document.querySelector('#box')
 
-box.ondragstart = function () {
-    return false
-}
-
 function dragAndDrop(e) {
-    let shiftX = e.clientX - box.getBoundingClientRect().left
-    let shiftY = e.clientY - box.getBoundingClientRect().top
+    const dragBox = e.currentTarget
 
-    box.style.position = 'absolute'
-    box.style.zIndex = 1000
-    document.body.append(box)
+    let shiftX = e.clientX - dragBox.getBoundingClientRect().left
+    let shiftY = e.clientY - dragBox.getBoundingClientRect().top
 
-    move(e.pageX, e.pageY)
+    dragBox.style.position = 'absolute'
+    document.body.append(dragBox)
 
-    function move(pageX, pageY) {
-        box.style.left = pageX - shiftX + 'px'
-        box.style.top = pageY - shiftY + 'px'
+    boxMove(e)
+
+    function boxMove(e) {
+        dragBox.style.left = e.pageX - shiftX + 'px'
+        dragBox.style.top = e.pageY - shiftY + 'px'
     }
 
-    function onMouseMove(e) {
-        move(e.pageX, e.pageY)
-    }
+    document.addEventListener('mousemove', boxMove)
 
-    document.addEventListener('mousemove', onMouseMove)
-
-    box.addEventListener('mouseup', () => {
-        document.removeEventListener('mousemove', onMouseMove)
-        box.onmouseup = null
+    dragBox.addEventListener('mouseup', () => {
+        document.removeEventListener('mousemove', boxMove)
+        dragBox.onmouseup = null
     })
 }
 
