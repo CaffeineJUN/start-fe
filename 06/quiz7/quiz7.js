@@ -11,7 +11,7 @@ function gameStart() {
     const interval = setInterval(() => {
         bug.style.top = Math.random() * 381 + 'px'
         bug.style.left = Math.random() * 381 + 'px'
-    }, 2000)
+    }, 1000)
 
     function score(e) {
         e.target !== e.currentTarget ? point.innerHTML++ : life.innerHTML--
