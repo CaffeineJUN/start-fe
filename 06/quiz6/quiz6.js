@@ -10,20 +10,23 @@ function GuGuDan() {
     const num = document.querySelector('#num').value
 
     if (isNaN(parseInt(num))) {
-        alert('숫자 입력')
-        return false
+        alert('숫자를 입력하세요')
+        return
     }
 
     for (i = 1; i < 10; i++) {
         const li = document.createElement('li')
-        li.innerHTML = `${num} x ${i} = ${num * i}`
+
+        const textNode = document.createTextNode(`${num} x ${i} = ${num * i}`)
+        li.appendChild(textNode)
+
         li.style.listStyle = 'none'
         ul.appendChild(li)
     }
 }
 
-function clickGuGuDan(element) {
+function printGuGuDan(element) {
     element.addEventListener('click', GuGuDan)
 }
 
-clickGuGuDan(printBtn)
+printGuGuDan(printBtn)
