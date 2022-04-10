@@ -25,8 +25,8 @@ function GuGuDan() {
     }
 }
 
-function printGuGuDan(element) {
-    element.addEventListener('click', GuGuDan)
+function init() {
+    printBtn.addEventListener('click', GuGuDan)
 }
 
-printGuGuDan(printBtn)
+init()
