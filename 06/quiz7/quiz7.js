@@ -25,4 +25,8 @@ function gameStart() {
     box.addEventListener('click', score)
 }
 
-gameStart()
+function init() {
+    gameStart()
+}
+
+init()
