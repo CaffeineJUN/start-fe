@@ -3,9 +3,6 @@ const box = document.querySelector('#box')
 function dragAndDrop(e) {
     const dragBox = e.currentTarget
 
-    dragBox.style.position = 'absolute'
-    document.body.append(dragBox)
-
     let posX = e.clientX - dragBox.getBoundingClientRect().left
     let posY = e.clientY - dragBox.getBoundingClientRect().top
 
