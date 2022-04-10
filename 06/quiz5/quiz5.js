@@ -9,8 +9,8 @@ function dragAndDrop(e) {
     let posY = e.clientY - dragBox.getBoundingClientRect().top
 
     function boxMove(e) {
-        dragBox.style.left = e.pageX - posX + 'px'
-        dragBox.style.top = e.pageY - posY + 'px'
+        dragBox.style.left = e.clientX - posX + 'px'
+        dragBox.style.top = e.clientY - posY + 'px'
     }
 
     boxMove(e)
