@@ -9,7 +9,7 @@ function GuGuDan() {
 
     const num = document.querySelector('#num').value
 
-    if (!Number(num)) {
+    if (isNaN(parseInt(num))) {
         alert('숫자 입력')
         return false
     }
@@ -22,4 +22,8 @@ function GuGuDan() {
     }
 }
 
-printBtn.addEventListener('click', GuGuDan)
+function clickGuGuDan(element) {
+    element.addEventListener('click', GuGuDan)
+}
+
+clickGuGuDan(printBtn)
