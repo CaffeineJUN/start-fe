@@ -6,12 +6,12 @@ function dragAndDrop(e) {
     dragBox.style.position = 'absolute'
     document.body.append(dragBox)
 
-    let shiftX = e.clientX - dragBox.getBoundingClientRect().left
-    let shiftY = e.clientY - dragBox.getBoundingClientRect().top
+    let posX = e.clientX - dragBox.getBoundingClientRect().left
+    let posY = e.clientY - dragBox.getBoundingClientRect().top
 
     function boxMove(e) {
-        dragBox.style.left = e.pageX - shiftX + 'px'
-        dragBox.style.top = e.pageY - shiftY + 'px'
+        dragBox.style.left = e.pageX - posX + 'px'
+        dragBox.style.top = e.pageY - posY + 'px'
     }
 
     boxMove(e)
