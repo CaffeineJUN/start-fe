@@ -19,8 +19,8 @@ function GuGuDan() {
 
         const textNode = document.createTextNode(`${num} x ${i} = ${num * i}`)
         li.appendChild(textNode)
-
         li.style.listStyle = 'none'
+
         ul.appendChild(li)
     }
 }
