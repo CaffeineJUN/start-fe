@@ -27,4 +27,4 @@ function printRandomNum() {
     }, 50)
 }
 
-btn.addEventListener('click', printRandomNum)
+    btn.addEventListener('click', printRandomNum)
